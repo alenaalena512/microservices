@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../models/user.model';
 import { ApiService } from 'src/app/api/api.service';
 import { catchError, tap } from 'rxjs/operators';
+import {environment} from '../../../environments/environment';
 
 const JWT_LOCALSTORE_KEY = 'jwt';
 const USER_LOCALSTORE_KEY = 'user';
@@ -32,7 +33,7 @@ export class AuthService {
   }
 
   async login(email: string, password: string): Promise<any> {
-    return this.api.post('/users/auth/login',
+    return this.api.post(environment.usersApiHost, '/users/auth/login',
               {email: email, password: password})
               .then((res) => {
                 this.setTokenAndUser(res.token, res.user);
@@ -48,7 +49,7 @@ export class AuthService {
   }
 
   register(user: User, password: string): Promise<any> {
-    return this.api.post('/users/auth/',
+    return this.api.post(environment.usersApiHost, '/users/auth/',
               {email: user.email, password: password})
               .then((res) => {
                 this.setTokenAndUser(res.token, res.user);
