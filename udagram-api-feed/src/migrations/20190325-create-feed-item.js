@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('FeedItem', {
@@ -6,25 +6,25 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       caption: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       url: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-      },
-    });
+        type: Sequelize.DATE
+      }
+    })
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('FeedItem');
-  },
-};
+    return queryInterface.dropTable('FeedItem')
+  }
+}
