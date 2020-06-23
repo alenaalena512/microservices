@@ -1,6 +1,6 @@
 language: node-js
-   node_js:
-  - "12"
+node_js:
+  - 12
 services:
   - docker
 # Pre-testing installs
