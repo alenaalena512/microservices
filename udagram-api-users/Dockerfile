@@ -1,5 +1,5 @@
 # Use NodeJS base image
-FROM node:13
+FROM node:12
 
 # Create app directory
 WORKDIR /app
@@ -22,17 +22,16 @@ EXPOSE 8100
 
 WORKDIR /app/www
 
-ENV POSTGRES_USERNAME=pumpkinkova
-ENV POSTGRES_PASSWORD=pumpkinkova
-ENV POSTGRES_HOST=pumpkinkova.cojgcknv29kr.eu-west-2.rds.amazonaws.com
-ENV POSTGRES_DB=pumpkinkova
-ENV AWS_BUCKET=udagram-example-dev
-ENV AWS_REGION=eu-west-2
+ENV POSTGRES_USERNAME=$POSTGRES_USERNAME
+ENV POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+ENV POSTGRES_HOST=$POSTGRES_HOST
+ENV POSTGRES_DB=$POSTGRES_DB
+ENV AWS_BUCKET=$AWS_BUCKET
+ENV AWS_REGION=$AWS_REGION
 ENV AWS_PROFILE=default
-ENV JWT_SECRET=heheheheheheeh
-ENV URL=http://0.0.0.0:8100
-ENV PORT=8100
+ENV JWT_SECRET=$JWT_SECRET
+ENV URL=$URL
 
 
 # Define the Docker image's behavior at runtime
-CMD ["node", "server.js"]
+CMD ["node", "run", "dev"]
