@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: udagram-frontend
+  template:
+    metadata:
+      labels:
+        app: udagram-frontend
+    spec:
+      containers:
+      - name: frontendapi
+        image: dockeralcoder/frontendapi:latest
+        ports:
+        - containerPort: 80

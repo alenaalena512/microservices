@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udagram-feed
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: udagram-feed
+  template:
+    metadata:
+      labels:
+        app: udagram-feed
+    spec:
+      containers:
+      - name: feedapi
+        image: dockeralcoder/feedapi:latest
+        ports:
+        - containerPort: 8100
