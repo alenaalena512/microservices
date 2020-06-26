@@ -3,7 +3,11 @@ import {config} from './config/config';
 
 
 // Configure AWS
-const credentials = new AWS.SharedIniFileCredentials({profile: 'default'});
+const credentials = new AWS.EC2MetadataCredentials({
+  httpOptions: { timeout: 5000 }, // 5 second timeout
+  maxRetries: 10, // retry 10 times
+});
+
 AWS.config.credentials = credentials;
 
 export const s3 = new AWS.S3({

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontendapi
-        image: dockeralcoder/frontendapi:latest
+        image: dockeralcoder/frontendapi:10
         imagePullPolicy: Always
         ports:
         - containerPort: 80
