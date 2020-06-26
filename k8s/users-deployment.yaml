@@ -16,4 +16,4 @@ spec:
       - name: usersapi
         image: dockeralcoder/usersapi:latest
         ports:
-        - containerPort: 8100
+        - containerPort: 80

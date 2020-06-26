@@ -16,4 +16,4 @@ spec:
       - name: feedapi
         image: dockeralcoder/feedapi:latest
         ports:
-        - containerPort: 8100
+        - containerPort: 80

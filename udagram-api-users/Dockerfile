@@ -18,7 +18,7 @@ COPY ./ ./
 RUN npm run build 
 
 # Bind the port that the image will run on
-EXPOSE 8100
+EXPOSE 8080
 
 WORKDIR /app/www
 
