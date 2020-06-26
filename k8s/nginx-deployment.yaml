@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: udagram-users
+  name: nginx
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: udagram-users
+      app: nginx
   template:
     metadata:
       labels:
-        app: udagram-users
+        app: nginx
     spec:
       containers:
       - name: usersapi
-        image: dockeralcoder/usersapi:latest
+        image: dockeralcoder/nginx:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
